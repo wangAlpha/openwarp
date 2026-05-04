@@ -51,7 +51,7 @@ jobs:
             --dmg-name-suffix x86_64
 
       - name: Upload DMG artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: OpenWarp-x86_64
           path: target/x86_64-apple-darwin/release-lto/bundle/osx/OpenWarp-x86_64.dmg
