@@ -65,7 +65,7 @@ jobs:
           echo "Release tag: $TAG / build ref: $BRANCH"
 
       - name: Create GitHub release
-        uses: softprops/action-gh-release@da05d552573ad5aba039eaac05058a918a7bf631 # v2.2.2
+        uses: softprops/action-gh-release@718ea10b132b3b2eba29c1007bb80653f286566b # v3.0.1
         with:
           name: ${{ steps.get-config.outputs.release_base_name }} ${{ steps.compute_tag.outputs.tag }}
           tag_name: ${{ steps.compute_tag.outputs.tag }}
@@ -124,7 +124,7 @@ jobs:
           GIT_RELEASE_TAG: ${{ needs.prepare_release.outputs.release_tag }}
 
       - name: Add DMG to GitHub release assets
-        uses: softprops/action-gh-release@da05d552573ad5aba039eaac05058a918a7bf631 # v2.2.2
+        uses: softprops/action-gh-release@718ea10b132b3b2eba29c1007bb80653f286566b # v3.0.1
         with:
           tag_name: ${{ needs.prepare_release.outputs.release_tag }}
           files: ${{ steps.bundle_app.outputs.dmg_path }}
@@ -162,7 +162,7 @@ jobs:
           GIT_RELEASE_TAG: ${{ needs.prepare_release.outputs.release_tag }}
 
       - name: Add installer to GitHub release assets
-        uses: softprops/action-gh-release@da05d552573ad5aba039eaac05058a918a7bf631 # v2.2.2
+        uses: softprops/action-gh-release@718ea10b132b3b2eba29c1007bb80653f286566b # v3.0.1
         with:
           tag_name: ${{ needs.prepare_release.outputs.release_tag }}
           files: ${{ steps.bundle_app.outputs.installer_path }}
